@@ -3,6 +3,7 @@ import { submissions } from '../../../state/actions';
 import { getGallerySubmissionsById } from '../../../api/index';
 import { connect } from 'react-redux';
 import { useOktaAuth } from '@okta/okta-react/dist/OktaContext';
+import { arrow_down } from '../../../assets/icons/arrow_down.svg';
 
 const WeeklySubmissions = props => {
   const { authState } = useOktaAuth();
@@ -23,21 +24,36 @@ const WeeklySubmissions = props => {
     });
   }, [authState]);
 
-  console.log('this is data: ', data[0].WritingUrl);
+  console.log('this is data: ', data);
+
+  data.map(item => {});
 
   return (
     <>
       <div className="weekly-sub-container">
-        <span className="label">
-          <h3 className="h3">Week</h3>
-          <h3 className="h3"> View Prompt </h3>
-        </span>
+        <h3 className="h3">Week {data[0].ID}</h3>
         <span className="submissions">
           <div className="sub-container">
-            <img className="gallery-submission" src={data[0].DrawingUrl} />
+            <div className="frame">
+              <img className="gallery-submission" src={data[0].DrawingUrl} />
+            </div>
+            <div className="prompt">
+              <span>
+                <h5>Prompt</h5>
+                <img scr={arrow_down} />
+              </span>
+              {/* <h4>prompt description</h4> */}
+            </div>
           </div>
+
           <div className="sub-container">
-            <img className="gallery-submission" src={data[0].WritingUrl} />
+            <div className="frame">
+              <img className="gallery-submission" src={data[0].WritingUrl} />
+            </div>
+            <div className="prompt">
+              <h5>Prompt</h5>
+              {/* <h4>prompt description</h4> */}
+            </div>
           </div>
         </span>
       </div>
