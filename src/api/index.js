@@ -519,8 +519,17 @@ const getGallerySubmissionsById = authState => {
   }
 };
 
-const getGallery = async authState => {
-  return apiAuthGet('/gallary', getAuthHeader(authState));
+const getPrompt = async => {
+  try {
+    return apiAuthGet(`/story`).then(response => {
+      console.log('this is my prompt data: ', response);
+    });
+  } catch (err) {
+    return new Promise(() => {
+      console.log(err);
+      return [];
+    });
+  }
 };
 
 const reset = async authState => {
@@ -559,6 +568,6 @@ export {
   getGameVotes,
   getChildGraph,
   getGallerySubmissionsById,
-  getGallery,
+  getPrompt,
   reset,
 };
