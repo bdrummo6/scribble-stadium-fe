@@ -1,1 +1,1 @@
-export { default as SinglePlayerVotingPage } from './SinglePlayerVotingContainer';
+export { default as SinglePlayerVotingPage } from './SinglePlayerVotingPageContainer';
