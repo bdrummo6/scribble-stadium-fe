@@ -33,7 +33,7 @@ import { AddChild } from './components/pages/AddChild';
 import { ChildDashboard } from './components/pages/ChildDashboard';
 import { DrawingSub } from './components/pages/DrawingSub';
 import { Help } from './components/pages/Help';
-import { LoginContainer } from './components/pages/Login/LoginContainer';
+import LoginContainer from './components/pages/Login/LoginContainer';
 import { MissionControl } from './components/pages/MissionControl';
 import { Modal } from './components/pages/Modal';
 import { NotFoundPage } from './components/pages/NotFound';
