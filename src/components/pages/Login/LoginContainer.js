@@ -27,7 +27,6 @@ const LoginContainer = () => {
         //     onSuccess(schema);
         // }
       },
-      authscheme: 'OAUTH2',
       features: { registration: true },
       // turning this feature on allows your widget to use Okta for user registration
       logo: 'path-to-your-logo',
